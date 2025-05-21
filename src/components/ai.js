@@ -2,7 +2,9 @@ import { HfInference } from "@huggingface/inference"
 
 const SYSTEM_PROMPT = "You are Chef Claude, a helpful AI chef who suggests recipes based on available ingredients."
 
-const hf = new HfInference(import.meta.env.VITE_HF_ACCESS_TOKEN.replace(/"/g, ""))
+const accessToken = import.meta.env.VITE_HF_ACCESS_TOKEN
+
+const hf = new HfInference((accessToken || "").replace(/"/g, ""))
 
 export async function getRecipeFromMistral(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")

@@ -30,13 +30,15 @@ header > h1 {
 
 main {
     padding: 30px 30px 10px;
+    
 }
 
-.add-ingredient-form {
+.add-ingredient-form,.instructions{
     display: flex;
     justify-content: center;
     gap: 12px;
     height: 38px;
+    margin-bottom: 24px;
 }
 
 .add-ingredient-form > input {

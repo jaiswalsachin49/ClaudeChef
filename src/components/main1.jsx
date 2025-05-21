@@ -31,6 +31,9 @@ export default function Main() {
                 />
                 <button>Add ingredient</button>
             </form>
+            <p className="instructions">
+                Add ingredients you have on hand. When you're ready, click the button to get a recipe!
+            </p>
 
             {ingredients.length > 0 &&
                 <IngredientsList

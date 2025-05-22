@@ -32,16 +32,18 @@ export default function Main() {
                 />
                 <button>Add ingredient</button>
             </form>
+            {ingredients.length < 4 &&
             <p className="instructions">
-                Add more than 3 ingredients you have on hand. When you're ready, click the button to get a recipe!
-            </p>
+                Add {4 - ingredients.length} more ingredients you have on hand. When you're ready, click the button to get a recipe!
+            </p>}
 
-            {ingredients.length > 0 &&
+            {ingredients.length > 0?
                 <IngredientsList
                     ingredients={ingredients}
                     getRecipe={getRecipe}
                     loading={loading}
-                />
+                />:
+                ""
             }
 
             {loading && <p>Loading recipe...</p>}
